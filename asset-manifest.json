@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/GraphQL---d-couverte/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/GraphQL---d-couverte/static/js/main.ed65ede4.chunk.js",
+    "main.js.map": "/GraphQL---d-couverte/static/js/main.ed65ede4.chunk.js.map",
+    "runtime-main.js": "/GraphQL---d-couverte/static/js/runtime-main.cfa0694b.js",
+    "runtime-main.js.map": "/GraphQL---d-couverte/static/js/runtime-main.cfa0694b.js.map",
+    "static/js/2.ffd1bedf.chunk.js": "/GraphQL---d-couverte/static/js/2.ffd1bedf.chunk.js",
+    "static/js/2.ffd1bedf.chunk.js.map": "/GraphQL---d-couverte/static/js/2.ffd1bedf.chunk.js.map",
+    "static/js/3.8c9e4a7e.chunk.js": "/GraphQL---d-couverte/static/js/3.8c9e4a7e.chunk.js",
+    "static/js/3.8c9e4a7e.chunk.js.map": "/GraphQL---d-couverte/static/js/3.8c9e4a7e.chunk.js.map",
+    "index.html": "/GraphQL---d-couverte/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/GraphQL---d-couverte/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.ffd1bedf.chunk.js.LICENSE.txt": "/GraphQL---d-couverte/static/js/2.ffd1bedf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cfa0694b.js",
+    "static/js/2.ffd1bedf.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.ed65ede4.chunk.js"
+  ]
+}
