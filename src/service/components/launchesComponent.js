@@ -33,23 +33,20 @@ const LaunchesListView = () => {
     if (error) return <p>Error :(</p>;
 
     let element = data.launches.map(({launch_date_utc, launch_success, rocket, links, details}, index) =>
-        <tr key={index}>
-            <td>{launch_date_utc}</td>
-            <td>{launch_success ? "Décollage réussi" : "c'est raté"}</td>
-            <td>{rocket.rocket_name}</td>
-            <td><ReactPlayer
+        <div key={index}>
+            <h2>Le décoollage du {launch_date_utc} est {launch_success ? "réussi" : "raté"} à bord de la {rocket.rocket_name}</h2>
+            <ReactPlayer
                 key={index}
                 url={links.video_link}
-            /></td>
-            <td>{details ? details : "pas de détails"}</td>
-        </tr>)
+            />
+            <p>{details ? details : "pas de détails"}</p>
+        </div>)
 
 
 
 
     return (
             <>
-                {/*<Table dataSource={dataSource} columns={columns} />*/}
                 {element}
             </>
             )
