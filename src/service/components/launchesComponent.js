@@ -3,22 +3,22 @@ import { useQuery } from '@apollo/react-hooks';
 import {Table} from 'antd';
 import ReactPlayer from "react-player";
 import {gql} from 'apollo-boost'
-const { Column, ColumnGroup } = Table;
+import moment from "moment";
 
 
-    const GET_LAUNCHES = gql`{
-        launches(limit: 5) {
-            launch_date_utc
-            launch_success
-            rocket {
-                rocket_name
-            }
-            links {
-                video_link
-            }
-            details
+const GET_LAUNCHES = gql`{
+    launches(limit: 5) {
+        launch_date_utc
+        launch_success
+        rocket {
+            rocket_name
         }
-    }`;
+        links {
+            video_link
+        }
+        details
+    }
+}`;
 
 const LaunchesListView = () => {
     const {
@@ -32,24 +32,26 @@ const LaunchesListView = () => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
-    let element = data.launches.map(({launch_date_utc, launch_success, rocket, links, details}, index) =>
-        <div key={index}>
-            <h2>Le décoollage du {launch_date_utc} est {launch_success ? "réussi" : "raté"} à bord de la {rocket.rocket_name}</h2>
+    const element = data.launches.map(({launch_date_utc, launch_success, rocket, links, details}, index) => {
+        const date = moment(launch_date_utc).format('LLLL')
+        return (<div key={index}>
+            <h2>The launch of {date} {launch_success ? "is a success" : "failed"} inside a {rocket.rocket_name}</h2>
             <ReactPlayer
                 key={index}
                 url={links.video_link}
             />
-            <p>{details ? details : "pas de détails"}</p>
+            <p>{details ? details : "No détails for this one"}</p>
         </div>)
+    })
 
 
 
 
     return (
-            <>
-                {element}
-            </>
-            )
+        <>
+            {element}
+        </>
+    )
 };
 
 export default LaunchesListView;
